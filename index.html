@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flourax Cinematic Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif;}
+body{background:#111; color:#fff; overflow-x:hidden; scroll-behavior:smooth;}
+.fade-in{opacity:0; animation:fadeIn 2s forwards;}
+@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+
+/* Hero cinematic */
+.hero{position:relative; height:100vh; overflow:hidden;}
+.hero video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; filter:brightness(50%);}
+.hero .flourax-logo{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:5rem; color:#ff4c4c; letter-spacing:3px; opacity:0; animation:logoAppear 3s forwards 2s;}
+@keyframes logoAppear{0%{opacity:0; transform:translate(-50%,-60%) scale(0.5);}100%{opacity:1; transform:translate(-50%,-50%) scale(1);}}
+
+/* Story slides */
+.story{display:flex; flex-direction:column; gap:50px; padding:100px 10%; background:#0f0f0f;}
+.story-slide{min-height:60vh; display:flex; flex-direction:row; align-items:center; justify-content:space-around; gap:20px; opacity:0; transform:translateY(50px); transition:all 1s ease;}
+.story-slide img, .story-slide video{width:45%; border-radius:15px; box-shadow:0 0 20px #000;}
+.story-slide p{width:45%; font-size:1.2rem; color:#ccc;}
+
+/* Products */
+.products{padding:50px 10%; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; background:#111;}
+.product-card{background:#1a1a1a; border-radius:15px; overflow:hidden; transform:translateY(50px); opacity:0; transition:all 0.8s ease;}
+.product-card img{width:100%; display:block;}
+.product-card h3{padding:15px; font-size:1.5rem;}
+.product-card p{padding:0 15px 15px; font-size:1rem; color:#ccc;}
+.product-card button{margin:0 15px 15px; padding:10px 20px; background:#ff4c4c; color:#fff; border:none; border-radius:8px; cursor:pointer; transition:0.3s;}
+.product-card button:hover{background:#ff1a1a; transform:scale(1.05);}
+
+/* Forms */
+.forms{background:#0a0a0a; padding:50px 10%; display:flex; justify-content:space-around; flex-wrap:wrap; gap:30px;}
+.form-card{background:#1a1a1a; padding:20px; border-radius:15px; width:300px;}
+.form-card h3{margin-bottom:15px;}
+.form-card input{width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:none;}
+.form-card button{width:100%; padding:10px; background:#ff4c4c; color:#fff; border:none; border-radius:8px; cursor:pointer;}
+.form-card button:hover{background:#ff1a1a;}
+
+/* About & Footer */
+.about, footer{padding:50px 10%; background:#111; color:#ccc;}
+.team{display:flex; gap:30px; flex-wrap:wrap;}
+.member{background:#1a1a1a; padding:20px; border-radius:15px; text-align:center; width:200px;}
+.member img{width:100%; border-radius:50%; margin-bottom:10px;}
+.member h4{margin-bottom:5px;}
+.socials a{margin-right:15px; color:#fff; text-decoration:none;}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+<video autoplay muted loop>
+<source src="https://cdn.pixabay.com/vimeo/590503386/pexels-590503386.mp4" type="video/mp4">
+</video>
+<div class="flourax-logo">Flourax</div>
+</section>
+
+<!-- Cinematic Story -->
+<section class="story">
+<div class="story-slide">
+<video autoplay muted loop>
+<source src="https://cdn.pixabay.com/vimeo/529192147/drone-house-construction.mp4" type="video/mp4">
+</video>
+<p>Flourax engineers helping homeowners design their dream homes.</p>
+</div>
+<div class="story-slide">
+<img src="https://via.placeholder.com/400x300.png?text=Home+Decor+Scene" alt="Decor">
+<p>Customers decorating homes with Flourax products.</p>
+</div>
+<div class="story-slide">
+<img src="https://via.placeholder.com/400x300.png?text=Global+Flourax" alt="Global">
+<p>Flourax products spreading style worldwide.</p>
+</div>
+</section>
+
+<!-- Products -->
+<section class="products">
+<div class="product-card">
+<img src="https://via.placeholder.com/300x200.png?text=RGB+LED+Light" alt="Product 1">
+<h3>RGB LED Light</h3>
+<p>Colorful lighting for your home.</p>
+<button onclick="window.location.href='https://www.paypal.com/paypalme/YOURIDHERE'">Buy Now</button>
+</div>
+<div class="product-card">
+<img src="https://via.placeholder.com/300x200.png?text=Decorative+Vase" alt="Product 2">
+<h3>Decorative Vase</h3>
+<p>Elegant vase for interiors.</p>
+<button onclick="window.location.href='https://www.paypal.com/paypalme/YOURIDHERE'">Buy Now</button>
+</div>
+</section>
+
+<!-- Forms -->
+<section class="forms">
+<div class="form-card">
+<h3>Customer Login</h3>
+<input type="email" placeholder="Gmail ID">
+<input type="password" placeholder="Password">
+<button>Login</button>
+</div>
+<div class="form-card">
+<h3>Seller Login</h3>
+<input type="email" placeholder="Gmail ID">
+<input type="password" placeholder="Password">
+<button>Login</button>
+</div>
+</section>
+
+<!-- About -->
+<section class="about">
+<h2>About Us</h2>
+<div class="team">
+<div class="member">
+<img src="https://via.placeholder.com/150" alt="Founder">
+<h4>Founder</h4>
+<p>John Doe</p>
+</div>
+<div class="member">
+<img src="https://via.placeholder.com/150" alt="Co-Founder">
+<h4>Co-Founder</h4>
+<p>Jane Smith</p>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>Contact: +977-XXXXXXXXX | email@example.com | Address: Kathmandu, Nepal</p>
+<div class="socials">
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">Twitter</a>
+</div>
+</footer>
+
+<script>
+// Scroll animations
+const elements = document.querySelectorAll('.story-slide, .product-card');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+},{threshold:0.2});
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
